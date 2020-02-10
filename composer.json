@@ -1,0 +1,54 @@
+{
+    "name": "medianet-dev/backpack-log-viewer",
+    "type": "library",
+    "description": "Integrate ArcaneDev/LogViewer in your Laravel-Backpack project",
+    "keywords": [
+        "MedianetDev",
+        "Laravel",
+        "Laravel Backpack",
+        "Log Viewer"
+    ],
+    "homepage": "https://github.com/MedianetDev/backpacklogviewer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Soufiene Slimi",
+            "email": "soufiene.slimi@medianet.com.tn",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~6.0",
+        "arcanedev/log-viewer": "5.1.6",
+        "php":">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : ">=5.4.3",
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "MedianetDev\\BackpackLogViewer\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MedianetDev\\BackpackLogViewer\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MedianetDev\\BackpackLogViewer\\BackpackLogViewerServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
